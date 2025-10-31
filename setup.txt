@@ -1,0 +1,13 @@
+py -3.11 -m venv venv
+venv\Scripts\activate 
+pip install websockets httpx
+
+Create a file called secrets.json and fill it with the following:
+{
+    "my_poesessid": "...",
+    "bot_poesessid": "...",
+    "my_cf_clearance": "...",
+    "bot_cf_clearance": "..."
+}
+
+The ... will have to be populated, at least for bot_poesessid and bot_cf_clearance. To do that you have to get to the poe website on chrome, perform a search on the trade site, press f12 to open the network tab on chrome, and then click "activate live search" to send that request to the poe server. In the network tab you'll see a message appear. Click that and investigate the headers section in the network tab. The headers will contain cookies for poesessid and cf_clearance in the headers section. This you need to fill into the fields in the secrets.json file to use them. These are critical for privacy as having them lets anyone behave as you and manipulate your account/players in various ways.
